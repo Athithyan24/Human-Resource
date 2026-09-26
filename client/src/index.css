@@ -1,0 +1,123 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-sans: "Outfit", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Fraunces", ui-serif, Georgia, serif;
+  --color-ink: #1a1814;
+  --color-paper: #f3efe6;
+  --color-mist: #e7e1d4;
+  --color-foam: #fbf8f2;
+  --color-copper: #b4532a;
+  --color-pine: #2c4a3e;
+  --color-sage: #7a8f7a;
+  --shadow-float: 0px 8px 32px rgba(0, 0, 0, 0.08);
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  background: var(--color-paper);
+  color: var(--color-ink);
+  letter-spacing: 0.01em;
+}
+
+.dark body,
+.dark {
+  background: #0e0d0c;
+  color: #f4efe6;
+}
+
+.dark .text-ink\/35 {
+  color: color-mix(in srgb, var(--color-paper) 35%, transparent) !important;
+}
+
+.dark .text-ink\/40 {
+  color: color-mix(in srgb, var(--color-paper) 40%, transparent) !important;
+}
+
+.dark .text-ink\/45 {
+  color: color-mix(in srgb, var(--color-paper) 45%, transparent) !important;
+}
+
+.dark .text-ink\/50 {
+  color: color-mix(in srgb, var(--color-paper) 50%, transparent) !important;
+}
+
+.dark .text-ink\/55 {
+  color: color-mix(in srgb, var(--color-paper) 55%, transparent) !important;
+}
+
+.dark .text-ink\/60 {
+  color: color-mix(in srgb, var(--color-paper) 60%, transparent) !important;
+}
+
+.dark .text-ink\/65 {
+  color: color-mix(in srgb, var(--color-paper) 65%, transparent) !important;
+}
+
+.dark .text-ink\/70 {
+  color: color-mix(in srgb, var(--color-paper) 70%, transparent) !important;
+}
+
+.display {
+  font-family: var(--font-display);
+}
+
+.glass {
+  background: color-mix(in srgb, var(--color-foam) 78%, transparent);
+  backdrop-filter: blur(18px);
+  box-shadow: var(--shadow-float);
+}
+
+.dark .glass {
+  background: rgba(28, 26, 23, 0.72);
+}
+
+.hairline {
+  box-shadow: inset 0 0 0 1px rgba(26, 24, 20, 0.08);
+}
+
+.dark .hairline {
+  box-shadow: inset 0 0 0 1px rgba(244, 239, 230, 0.08);
+}
+
+.paper-grid {
+  background-image:
+    radial-gradient(ellipse 80% 50% at 10% -10%, rgba(180, 83, 42, 0.08), transparent),
+    linear-gradient(to right, rgba(26, 24, 20, 0.035) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(26, 24, 20, 0.035) 1px, transparent 1px);
+  background-size: auto, 48px 48px, 48px 48px;
+}
+
+.dark .paper-grid {
+  background-image:
+    radial-gradient(ellipse 80% 50% at 10% -10%, rgba(180, 83, 42, 0.16), transparent),
+    linear-gradient(to right, rgba(244, 239, 230, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(244, 239, 230, 0.04) 1px, transparent 1px);
+}
+
+::selection {
+  background: #d8c4b0;
+}
+
+input,
+select,
+textarea {
+  font-family: inherit;
+}
+
+.scrollbar-thin::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+.scrollbar-thin::-webkit-scrollbar-thumb {
+  background: rgba(26, 24, 20, 0.15);
+  border-radius: 99px;
+}

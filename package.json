@@ -1,0 +1,9 @@
+{
+  "name": "arclight-hr",
+  "private": true,
+  "scripts": {
+    "seed": "npm run seed --prefix server",
+    "server": "npm run dev --prefix server",
+    "client": "npm run dev --prefix client"
+  }
+}
