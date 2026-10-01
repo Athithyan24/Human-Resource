@@ -69,8 +69,14 @@ export function OrgPage() {
             <Surface key={t._id} className="flex flex-wrap items-center justify-between gap-3">
               <div>
                 <h3 className="display text-2xl">{t.name}</h3>
-                <p className="text-sm text-ink/50">
-                  {t.department?.name} · Lead {fullName(t.leader)} · {t.members?.length || 0} people
+                <p className="text-sm text-ink/50">{t.department?.name}</p>
+                <p className="mt-2 text-sm">
+                  <span className="text-ink/50">Members: </span>
+                  {(t.members || []).length > 0 ? t.members.map(fullName).join(", ") : "None assigned"}
+                </p>
+                <p className="mt-1 text-sm">
+                  <span className="text-ink/50">Team leader: </span>
+                  {fullName(t.leader)}
                 </p>
               </div>
             </Surface>
